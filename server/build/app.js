@@ -22,7 +22,9 @@ app.use((0, cors_1.default)({ origin: true }));
 app.use(CryptoInfoController_1.router);
 app.use(UserController_1.router);
 
+const express = require("express");
 const path = require("path");
+
 const __parent = path.resolve(__dirname, "..");
 // console.log("__parent", __parent);
 
@@ -31,7 +33,7 @@ const root = path.join(__parent, "client", "build");
 console.log("root", root);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express_1.static(root));
+  app.use(express.static(root));
   app.get("*", (req, res) => res.sendFile("index.html", { root }));
 } else {
   app.get("/", (req, res) => {
