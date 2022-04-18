@@ -22,10 +22,11 @@ app.use((0, cors_1.default)({ origin: true }));
 app.use(CryptoInfoController_1.router);
 app.use(UserController_1.router);
 
-const __parent = path_1.resolve(__dirname, "..");
+const path = require("path");
+const __parent = path.resolve(__dirname, "..");
 // console.log("__parent", __parent);
 
-const root = path_1.join(__parent, "client", "build");
+const root = path.join(__parent, "client", "build");
 
 console.log("root", root);
 
