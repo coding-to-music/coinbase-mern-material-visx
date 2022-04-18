@@ -1,3 +1,24 @@
+# coinbase-mern-material-visx
+
+# 🚀 Javascript full-stack 🚀
+
+## MERN Stack
+
+### React / Express / MongoDB / TypeScript / Material UI / Coingecko API
+
+https://github.com/coding-to-music/coinbase-mern-material-visx
+
+https://coinbase-mern-material-visx.herokuapp.com
+
+by jgabitto https://github.com/jgabitto
+
+https://github.com/jgabitto/coinbase
+
+```java
+const secret = process.env.JWT_SECRET;
+mongoose_1.default.connect(`${process.env.MONGODB_URI
+```
+
 ## Cryptoinfoweb App
 
 <!-- TABLE OF CONTENTS -->
@@ -38,14 +59,13 @@ The different functionalities of Cryptoinfoweb:
 - Usage of Material UI Components such as Topbar, Hero, Table, Footer, Grid, Box, et
 - Use of reusable components such as some of the Chart Components
 
-These were some of the facets I wanted to incorporate into this app as they would mimic some of the major features of popular cyprocurrency apps like Coinbase. 
+These were some of the facets I wanted to incorporate into this app as they would mimic some of the major features of popular cyprocurrency apps like Coinbase.
 
 This was a fun project and there are a lot of features I would like to add in the future!
 
 Views
 
--[Jumbotron](https://drive.google.com/file/d/1xhT2oKpNj0IFJgvEVPkJOLjMuXc8wAFr/view?usp=sharing)
--[Prices Table](https://drive.google.com/file/d/1dESC01NkNhC5Ju-81TNiRPpd7DnNewW-/view?usp=sharing)
+-[Jumbotron](https://drive.google.com/file/d/1xhT2oKpNj0IFJgvEVPkJOLjMuXc8wAFr/view?usp=sharing) -[Prices Table](https://drive.google.com/file/d/1dESC01NkNhC5Ju-81TNiRPpd7DnNewW-/view?usp=sharing)
 
 ### Deployed
 
@@ -79,39 +99,53 @@ To get a local copy up and running follow these simple example steps.
 List of things you need to run Cryptoinfoweb locally
 
 - npm
+
 ```sh
   npm install npm@latest -g
-  ```
+```
+
 ### Installation
 
 1. Clone the repo
    ```sh
    git clone https://github.com/jgabitto/coinbase.git
    ```
- 2. CD Client
-   ```sh
-   cd client
-   ```
-   3. Install NPM packages for client
-   ```sh
-   npm install
-   ```
-   4. Run client server
-   ```sh
-   npm start
-   ```
- 4. CD to Server
-   ```sh
-   cd ../server
-   ```
-   5. Install NPM packages for server
-   ```sh
-   npm install
-   ```
-   6. Run server server
-   ```sh
-   npm start
-   ```
+2. CD Client
+
+```sh
+cd client
+```
+
+3.  Install NPM packages for client
+
+```sh
+npm install
+```
+
+4.  Run client server
+
+```sh
+npm start
+```
+
+4.  CD to Server
+
+```sh
+cd ../server
+```
+
+5.  Install NPM packages for server
+
+```sh
+npm install
+```
+
+6.  Run server server
+
+```sh
+npm start
+```
+
 <!-- LICENSE -->
 
 ## License
@@ -125,3 +159,39 @@ Distributed under the MIT License. See `LICENSE` for more information.
 Jorge G.
 
 Project Link: [RideShare](https://github.com/jgabitto/ctd_final_project_frontend#about-the-project)
+
+## GitHub
+
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/coinbase-mern-material-visx.git
+git push -u origin main
+```
+
+## Heroku
+
+```java
+heroku create coinbase-mern-material-visx
+```
+
+## Heroku MongoDB Environment Variables
+
+```java
+heroku config:set
+
+heroku config:set PUBLIC_URL="https://coinbase-mern-material-visx.herokuapp.com"
+```
+
+## Push to Heroku
+
+```java
+git push heroku
+
+# or
+
+npm run deploy
+```
