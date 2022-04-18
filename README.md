@@ -183,6 +183,8 @@ heroku create coinbase-mern-material-visx
 ```java
 heroku config:set
 
+heroku config:set JWT_SECRET="secret"
+
 heroku config:set PUBLIC_URL="https://coinbase-mern-material-visx.herokuapp.com"
 ```
 
