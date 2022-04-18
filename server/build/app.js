@@ -31,7 +31,7 @@ const root = path.join(__parent, "client", "build");
 console.log("root", root);
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(root));
+  app.use(express_1.static(root));
   app.get("*", (req, res) => res.sendFile("index.html", { root }));
 } else {
   app.get("/", (req, res) => {
