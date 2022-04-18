@@ -1,7 +1,9 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
@@ -15,10 +17,27 @@ app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, cors_1.default)({ origin: true }));
 app.use(CryptoInfoController_1.router);
 app.use(UserController_1.router);
+
+const __parent = path.resolve(__dirname, "..");
+// console.log("__parent", __parent);
+
+const root = path.join(__parent, "client", "build");
+
+console.log("root", root);
+
 if (process.env.NODE_ENV === "production") {
-    app.use(express_1.default.static(path_1.default.resolve(__dirname, "../../client/build")));
-    app.get("*", (req, res) => {
-        res.sendFile(path_1.default.resolve(__dirname, "../client/build", "index.html"));
-    });
+  app.use(express.static(root));
+  app.get("*", (req, res) => res.sendFile("index.html", { root }));
+} else {
+  app.get("/", (req, res) => {
+    res.send("API IS RUNNING......");
+  });
 }
+
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express_1.default.static(path_1.default.resolve(__dirname, "../../client/build")));
+//     app.get("*", (req, res) => {
+//         res.sendFile(path_1.default.resolve(__dirname, "../client/build", "index.html"));
+//     });
+// }
 exports.default = app;
