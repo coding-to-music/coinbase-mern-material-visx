@@ -25,7 +25,7 @@ app.use(UserController_1.router);
 const express = require("express");
 const path = require("path");
 
-const __parent = path.resolve(__dirname, "..");
+const __parent = path.resolve(__dirname, "../../");
 // console.log("__parent", __parent);
 
 const root = path.join(__parent, "client", "build");
