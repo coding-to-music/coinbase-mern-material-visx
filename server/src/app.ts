@@ -13,12 +13,28 @@ app.use(cors({ origin: true }));
 app.use(CryptoInfoController);
 app.use(UserController);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.resolve(__dirname, "../../client/build")));
+const __parent = path.resolve(__dirname, "..");
+// console.log("__parent", __parent);
 
-  app.get("*", (req: Request, res: Response) => {
-    res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+const root = path.join(__parent, "client", "build");
+
+console.log("root", root);
+
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(root));
+  app.get("*", (req, res) => res.sendFile("index.html", { root }));
+} else {
+  app.get("/", (req, res) => {
+    res.send("API IS RUNNING......");
   });
 }
+
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.resolve(__dirname, "../../client/build")));
+
+//   app.get("*", (req: Request, res: Response) => {
+//     res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
+//   });
+// }
 
 export default app;

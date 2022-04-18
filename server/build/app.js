@@ -5,23 +5,27 @@ var __importDefault =
     return mod && mod.__esModule ? mod : { default: mod };
   };
 Object.defineProperty(exports, "__esModule", { value: true });
+
 const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const cors_1 = __importDefault(require("cors"));
 const CryptoInfoController_1 = require("./controllers/CryptoInfoController");
 const UserController_1 = require("./controllers/UserController");
+
 require("./db/mongoose");
+
 const app = (0, express_1.default)();
+
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: true }));
 app.use((0, cors_1.default)({ origin: true }));
 app.use(CryptoInfoController_1.router);
 app.use(UserController_1.router);
 
-const __parent = path.resolve(__dirname, "..");
+const __parent = path_1.resolve(__dirname, "..");
 // console.log("__parent", __parent);
 
-const root = path.join(__parent, "client", "build");
+const root = path_1.join(__parent, "client", "build");
 
 console.log("root", root);
 
