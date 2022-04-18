@@ -20,9 +20,13 @@ const root = path.join(__parent, "client", "build");
 
 console.log("root", root);
 
+const root2 = "/client/build";
+
+console.log("root2", root2);
+
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static(root));
-  app.get("*", (req, res) => res.sendFile("index.html", { root }));
+  app.use(express.static(root2));
+  app.get("*", (req, res) => res.sendFile("index.html", { root2 }));
 } else {
   app.get("/", (req, res) => {
     res.send("API IS RUNNING......");
